@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Product</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Hello RezaGemCollection Team! ✨</h1>
+    <p class="center-text">✨ Name your product, specify sizes, and upload up to 10 images. Enter a description and it will be improved by the AI.</p>
+    
+    <form id="uploadForm" enctype="multipart/form-data">
+        <label for="productName">Product Name:</label>
+        <input 
+            type="text" 
+            id="productName" 
+            name="productName" 
+            required 
+            spellcheck="true" 
+            placeholder="Enter product name">
+        <div id="suggestionsContainer"></div>
+        <br><br>
+
+        <label for="images">Select Images:</label>
+        <input 
+            type="file" 
+            id="images" 
+            name="images" 
+            accept="image/*" 
+            multiple 
+            required
+            onchange="previewImages()"> <!-- Add onchange event -->
+        <br><br>
+        <div id="previewContainer"></div>
+        <div id="addImageButtonContainer"></div>  <!-- Place this outside of previewContainer -->
+
+        <br><br>
+
+        <div id="sizePriceContainer">
+            <!-- Initial size-price group -->
+            <div class="size-price-group">
+                <label for="size1">Size:</label>
+                <input type="text" name="size[]" id="size1" placeholder="Enter size (e.g., 8)" required>
+                <select name="unit[]" id="unit1" required>
+                    <option value="mm">mm</option>
+                    <option value="cm">cm</option>
+                    <option value="in">inches</option>
+                </select>
+                <label for="price1">Price:</label>
+                <input type="number" name="price[]" id="price1" placeholder="$" step="0.01" min="0" required>
+            </div>
+        </div>
+        <button type="button" id="addSizePriceButton">Add Size & Price</button>
+        
+
+        <br><br>
+
+        <label for="userDescription">User Description:</label>
+        <textarea 
+            id="userDescription" 
+            name="userDescription" 
+            rows="4" 
+            cols="50" 
+            spellcheck="true" 
+            placeholder="Enter a description for your product"></textarea>
+        <br><br>
+
+        <button type="submit">Upload</button>
+    </form>
+
+    <div class="loading-spinner" id="loadingSpinner" style="display: none;"></div>
+    <div id="response"></div>
+
+    <script src="js/script.js"></script>
+ 
+</body>
+</html>

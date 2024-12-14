@@ -1,0 +1,354 @@
+/* styles.css */
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Centered text styling */
+.center-text {
+  text-align: center; /* Centers the text */
+  margin: 20px 0;      /* Adds space above and below */
+  padding: 10px;       /* Adds internal padding for spacing */
+  background-color: #f4f4f4; /* Light background color */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Form styles */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 2px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Preview Image Styling */
+#imagePreview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#imagePreview img {
+  max-width: 150px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Spelling error styling */
+input::-webkit-spelling-error {
+  border-bottom: 2px solid red !important;
+  background-color: yellow !important;
+  font-weight: bold !important;
+}
+
+input::-moz-spelling-error {
+  border-bottom: 2px solid red !important;
+  background-color: yellow !important;
+  font-weight: bold !important;
+}
+
+textarea::-webkit-spelling-error {
+  border-bottom: 2px solid red !important;
+  background-color: yellow !important;
+  font-weight: bold !important;
+}
+
+textarea::-moz-spelling-error {
+  border-bottom: 2px solid red !important;
+  background-color: yellow !important;
+  font-weight: bold !important;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: none;
+  margin: 20px auto;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Response message styling */
+#response {
+  display: none;
+  background-color: #e0f0ff; /* Light blue background */
+  padding: 15px;
+  margin-top: 20px;
+  border: 1px solid #007bff; /* Blue border */
+  border-radius: 5px;
+  text-align: center;
+}
+
+#response p {
+  font-size: 1.2rem;
+  color: #007bff; /* Blue text color */
+}
+
+/* Success message with emojis */
+.success-message {
+  font-size: 18px;
+  margin-bottom: 20px;
+  animation: bounceIn 1s ease; /* Bounce animation for success message */
+}
+
+.success-message::before {
+  content: "🎉🎉 "; /* Add emojis before the text */
+}
+
+/* Product name styling */
+.product-name {
+  color: #0056b3; /* Dark blue color for the product name */
+  font-weight: bold; /* Bold the product name */
+}
+
+/* "Add Another Product" button */
+.add-another-btn {
+  display: inline-block;
+  background-color: #100744; /* Blue background */
+  color: white;
+  font-size: 14px; /* Smaller font size */
+  padding: 6px 12px; /* Smaller padding */
+  border: none;
+  border-radius: 3px; /* Slightly smaller border radius */
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 10px;
+  width: auto;
+  min-width: 150px;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out; /* Animation for the button */
+}
+
+/* Hover effect for the button */
+.add-another-btn:hover {
+  background-color: #45a049; /* Slightly darker green */
+}
+
+/* Animation for fade-in */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Bounce animation for the success message */
+@keyframes bounceIn {
+  0% {
+      transform: scale(0.8);
+      opacity: 0;
+  }
+  50% {
+      transform: scale(1.05);
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+/* Container for each size and price input pair */
+.size-price-group {
+  display: flex;
+  flex-direction: column; /* Arrange inputs vertically */
+  gap: 10px; /* Space between inputs */
+  margin-bottom: 15px;
+}
+
+/* Input styling for size and price */
+.size-price-group input {
+  padding: 6px;
+  width: 100%; /* Full width for a neat look */
+  max-width: 300px; /* Optional: Set a maximum width */
+  height: 36px; /* Consistent height */
+  border: 1px solid #7bffff; /* Light blue border */
+  border-radius: 3px;
+  font-size: 14px;
+  box-sizing: border-box; /* Consistent sizing with padding */
+}
+
+/* Focus effect for inputs */
+.size-price-group input:focus {
+  outline: 2px solid #7bffff;
+}
+
+/* "Add Size & Price" button */
+#addSizePriceButton {
+  background-color: #7bffff;
+  color: #003366;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 1px;
+  display: inline-block; /* Prevent full-width stretching */
+  max-width: fit-content; /* Ensure it doesn't exceed the content's size */
+  width: auto; /* Let the content determine the width */
+}
+
+
+/* Button hover effect */
+#addSizePriceButton:hover {
+  background-color: #66e0ff;
+}
+/* Image preview container styling */
+/* Image preview container styling */
+#previewContainer {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.image-preview {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+}
+
+.preview-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Style the image wrapper */
+.img-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+}
+
+/* Style the remove icon */
+.remove-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 10px;  /* Adjust size as needed */
+  color: red;
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Optional: Style the remove icon on hover */
+.remove-icon:hover {
+  background-color: red;
+  color: white;
+}
+#previewContainer {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: flex-start;  /* Align items to the top */
+}
+
+/* Style the "Add Image" button */
+.add-image-icon {
+  display: inline-block;
+  width: 100px; /* Match the size of the preview images */
+  height: 100px; /* Match the size of the preview images */
+  background-color: #f0f0f0; /* Optional: a light background color */
+  border: 2px dashed #ccc; /* Optional: border to make it stand out */
+  color: #333; /* Text color for the + symbol */
+  text-align: center;
+  line-height: 100px; /* Vertically center the + sign */
+  font-size: 2rem; /* Large enough + symbol */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin: 5px
+}
+
+/* Optional hover effect */
+.add-image-icon:hover {
+  background-color: #ddd;
+}
+
+/* Make sure this CSS is included in your stylesheet */
+
+.remove-size-price-icon {
+  cursor: pointer;
+  margin-left: 10px;
+  color: red; /* Red color for visibility */
+  font-size: 20px; /* Increase font size to make it more obvious */
+}
+
+.remove-size-price-icon:hover {
+  color: darkred; /* Change color on hover */
+}
+
+/* Optional: For additional visual feedback, you can add a border or background on hover */
+.remove-size-price-icon:hover {
+  background-color: #f2f2f2; /* Light background on hover */
+  border-radius: 5px; /* Rounded corners for better look */
+  padding: 5px;
+}
+
